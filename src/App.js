@@ -35,16 +35,32 @@ function App() {
           </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+          <Paper className={classes.paper}>
+          <Button variant="outlined" color="secondary">
+          CE
+          </Button>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+          <Paper className={classes.paper}>
+          <Button variant="outlined" >
+          CE
+          </Button>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+          <Paper className={classes.paper}>
+          <Button variant="outlined" color="primary">
+          %
+          </Button>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+          <Paper className={classes.paper}>
+          <Button variant="outlined" color="primary">
+          /
+          </Button>
+          </Paper>
         </Grid>
       </Grid>
     </div>
