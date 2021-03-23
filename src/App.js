@@ -1,52 +1,60 @@
 
-import React,{useState, useEffect} from 'react';
-import './App.css';
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
 
 function App() {
-  const [currentSum,setCurrentSum]=useState(0);
-  const [clear,setClear]=useState(false);
-
-  useEffect(()=>{
-    document.querySelector('#result').value="";
-  },[])
-  
-  useEffect(()=>{
-    if(clear)
-    document.querySelector('#result').value="";
-  })
-
-  const Add=(e)=>{
-    e.preventDefault();
-    if(clear) setClear(false);
-    let currentNum=document.querySelector('#num').value
-    if(currentNum=='')
-    return;
-    let sum= currentSum+parseInt(currentNum);
-    setCurrentSum(sum);
-    document.querySelector('#num').value="";
-      
-  }
-
-  const Clear=(e)=>{
-    e.preventDefault();
-    console.log('sum:', currentSum);
-    document.querySelector('form').reset();
-    setClear(true);
-    setCurrentSum(0);
-  }
+  const classes = useStyles();
 
   return (
-    <div className="App">
-      <div className="app-title">
-        <h1> Basic Form Calculator</h1>
-      </div>
-      <form>
-            <input type="text" id="result" value={currentSum}  readOnly />   
-            <input type="text" id="num" placeholder="enter a number" />
-            <button onClick={Add}>Add</button>
-            <button onClick={Clear}>Clear</button>
-      </form>
+    <React.Fragment>
+      <CssBaseline />
+      <Container fixed>
+        <Typography component="div" style={{ backgroundColor: '#blue', height: '100vh' }}  >
+
+        <div className={classes.root}>          
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Paper className={classes.paper}>xs=12</Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>xs=6</Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>xs=6</Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper className={classes.paper}>xs=3</Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper className={classes.paper}>xs=3</Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper className={classes.paper}>xs=3</Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper className={classes.paper}>xs=3</Paper>
+        </Grid>
+      </Grid>
     </div>
+     </Typography>
+      </Container>
+    </React.Fragment>
   );
 }
 
